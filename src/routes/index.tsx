@@ -12,6 +12,7 @@ import {
   SiteFooter,
   WhyMe,
 } from "@/components/site/sections";
+import { SectionTracker } from "@/components/site/tracker";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -39,6 +40,7 @@ function Index() {
   return (
     <div id="top" className="min-h-screen bg-background">
       <SiteNav />
+      <SectionTracker />
       <main>
         <Hero />
         <About />

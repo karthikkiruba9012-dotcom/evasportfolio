@@ -122,11 +122,31 @@ export const SKILL_GROUPS = [
 ];
 
 export const CERTIFICATIONS = [
-  { name: "Microsoft Power BI for Business Intelligence", issuer: "Udemy", date: "Issued Mar 2026" },
+  { name: "Unilever Digital Marketing Analyst", issuer: "Unilever", date: "Issued Aug 2026" },
+  { name: "Microsoft HR Manager", issuer: "Microsoft", date: "Issued Aug 2026" },
+  { name: "Omnichannel Retail Strategy", issuer: "University of Pennsylvania", date: "Issued Aug 2026" },
+  { name: "Product Management", issuer: "Futureversity", date: "Issued Aug 2026" },
+  {
+    name: "Generative AI for Human Resources (HR) Professionals",
+    issuer: "IBM iX",
+    date: "Issued Aug 2026",
+  },
+  {
+    name: "Microsoft Power BI with Business Intelligence",
+    issuer: "Maven Analytics",
+    date: "Issued Mar 2026",
+  },
   { name: "Performance Marketing", issuer: "Udemy", date: "Issued Mar 2026" },
-  { name: "Social Media Marketing", issuer: "HubSpot Academy", date: "Issued Apr 2025 · Expires May 2027" },
-  { name: "Use Canva to Design Digital Course Collateral", issuer: "Coursera", date: "Issued Apr 2025" },
-  { name: "AWS Certified DevOps Engineer", issuer: "Cloud Binary", date: "Issued Feb 2024" },
+  {
+    name: "Social Media Marketing",
+    issuer: "HubSpot Academy",
+    date: "Issued Apr 2025 · Expires May 2027",
+  },
+  {
+    name: "Use Canva to Design Digital Course Collateral",
+    issuer: "Coursera",
+    date: "Issued Apr 2025",
+  },
 ];
 
 export const EDUCATION = [

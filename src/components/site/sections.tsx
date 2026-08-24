@@ -162,6 +162,24 @@ export function Experience() {
             </Reveal>
           ))}
         </div>
+
+        <div className="mt-16">
+          <Reveal kind="fade">
+            <h3 className="text-lg font-semibold">Field training &amp; early experience</h3>
+          </Reveal>
+          <RevealGroup className="mt-6 grid gap-6 sm:grid-cols-2">
+            {FIELD_TRAINING.map((item) => (
+              <RevealItem key={item.org} kind="up">
+                <article className="card-lux h-full p-7">
+                  <span className="chip">{item.date}</span>
+                  <h4 className="mt-4 text-lg font-semibold">{item.role}</h4>
+                  <p className="mt-1 text-sm font-medium text-muted-foreground">{item.org}</p>
+                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{item.body}</p>
+                </article>
+              </RevealItem>
+            ))}
+          </RevealGroup>
+        </div>
       </div>
     </section>
   );
@@ -193,7 +211,7 @@ export function Expertise() {
           <Reveal kind="fade">
             <h3 className="flex items-center gap-2 text-lg font-semibold">
               <Award className="h-5 w-5 text-accent" />
-              Certifications
+              Licenses &amp; certifications
             </h3>
           </Reveal>
           <RevealGroup className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3" stagger={0.08}>
@@ -236,24 +254,6 @@ export function Education() {
             </RevealItem>
           ))}
         </RevealGroup>
-
-        <div className="mt-16">
-          <Reveal kind="fade">
-            <h3 className="text-lg font-semibold">Field training &amp; early experience</h3>
-          </Reveal>
-          <RevealGroup className="mt-6 grid gap-6 sm:grid-cols-2">
-            {FIELD_TRAINING.map((item) => (
-              <RevealItem key={item.org} kind="up">
-                <article className="card-lux h-full p-7">
-                  <span className="chip">{item.date}</span>
-                  <h4 className="mt-4 text-lg font-semibold">{item.role}</h4>
-                  <p className="mt-1 text-sm font-medium text-muted-foreground">{item.org}</p>
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{item.body}</p>
-                </article>
-              </RevealItem>
-            ))}
-          </RevealGroup>
-        </div>
       </div>
     </section>
   );

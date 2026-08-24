@@ -196,7 +196,7 @@ export function Experience() {
 
 export function Expertise() {
   return (
-    <section id="expertise" className="relative py-24 sm:py-32">
+    <section id="expertise" className="relative overflow-hidden bg-secondary/60 py-24 sm:py-32">
       <div className="section-shell">
         <SectionHeading eyebrow="Expertise" title="Capability map." align="center" />
         <RevealGroup className="mt-14 grid gap-6 sm:grid-cols-2">
@@ -224,8 +224,8 @@ export function Expertise() {
             </h3>
           </Reveal>
           <RevealGroup className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3" stagger={0.08}>
-            {CERTIFICATIONS.map((cert) => (
-              <RevealItem key={cert.name} kind="up">
+            {CERTIFICATIONS.map((cert, i) => (
+              <RevealItem key={cert.name} kind={i % 3 === 0 ? "left" : i % 3 === 1 ? "up" : "right"}>
                 <article className="card-lux h-full p-6">
                   <h4 className="text-sm font-semibold leading-snug">{cert.name}</h4>
                   <p className="mt-2 text-sm text-muted-foreground">{cert.issuer}</p>
@@ -270,7 +270,7 @@ export function Education() {
 
 export function Insights() {
   return (
-    <section id="insights" className="relative overflow-hidden py-24 sm:py-32">
+    <section id="insights" className="dark relative overflow-hidden bg-background py-24 text-foreground sm:py-32">
       <div className="section-shell">
         <SectionHeading eyebrow="In her words" title="Notes from the journey." align="center" />
         <RevealGroup className="mt-14 grid gap-6 lg:grid-cols-2">
@@ -295,7 +295,7 @@ export function Contact() {
   const [sending, setSending] = useState(false);
 
   return (
-    <section id="contact" className="relative py-24 sm:py-32">
+    <section id="contact" className="relative bg-secondary/50 py-24 sm:py-32">
       <div className="section-shell grid gap-12 lg:grid-cols-[0.9fr_1.1fr]">
         <div>
           <SectionHeading
@@ -390,7 +390,7 @@ export function Contact() {
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-border py-12">
+    <footer className="dark border-t border-border bg-background py-12 text-foreground">
       <div className="section-shell flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-center">
         <div>
           <p className="font-display text-base font-semibold">Evangelin Priyadarshini</p>

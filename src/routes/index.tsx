@@ -40,6 +40,7 @@ function Index() {
   return (
     <div id="top" className="min-h-screen bg-background">
       <SiteNav />
+      <SectionTracker />
       <main>
         <Hero />
         <About />

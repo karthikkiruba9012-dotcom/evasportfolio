@@ -12,6 +12,7 @@ import {
   SiteFooter,
   WhyMe,
 } from "@/components/site/sections";
+import { SectionTracker } from "@/components/site/tracker";
 
 export const Route = createFileRoute("/")({
   head: () => ({

@@ -1,24 +1,56 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Toaster } from "@/components/ui/sonner";
+import { SiteNav } from "@/components/site/nav";
+import { Hero } from "@/components/site/hero";
+import {
+  About,
+  Contact,
+  Education,
+  Experience,
+  Expertise,
+  Insights,
+  SiteFooter,
+  WhyMe,
+} from "@/components/site/sections";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "Evangelin Priyadarshini — Marketing & HR Strategist, MBA '27" },
+      {
+        name: "description",
+        content:
+          "Portfolio of Evangelin Priyadarshini, MBA '27 (SJIM) Marketing & HR strategist in Bengaluru — SEO, content strategy, performance marketing and people-first brand growth.",
+      },
+      { property: "og:title", content: "Evangelin Priyadarshini — Marketing & HR Strategist" },
+      {
+        property: "og:description",
+        content:
+          "Driving brand growth through digital & content strategy. MBA '27 candidate specialising in Marketing and Human Resources.",
+      },
+      { property: "og:type", content: "profile" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div id="top" className="min-h-screen bg-background">
+      <SiteNav />
+      <main>
+        <Hero />
+        <About />
+        <WhyMe />
+        <Experience />
+        <Expertise />
+        <Education />
+        <Insights />
+        <Contact />
+      </main>
+      <SiteFooter />
+      <Toaster />
     </div>
   );
 }

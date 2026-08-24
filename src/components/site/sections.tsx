@@ -211,7 +211,7 @@ export function Expertise() {
           <Reveal kind="fade">
             <h3 className="flex items-center gap-2 text-lg font-semibold">
               <Award className="h-5 w-5 text-accent" />
-              Certifications
+              Licenses &amp; certifications
             </h3>
           </Reveal>
           <RevealGroup className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3" stagger={0.08}>

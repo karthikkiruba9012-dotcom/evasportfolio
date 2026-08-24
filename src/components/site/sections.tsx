@@ -87,20 +87,28 @@ export function About() {
 
 export function WhyMe() {
   return (
-    <section id="why" className="relative overflow-hidden py-24 sm:py-32">
+    <section
+      id="why"
+      className="dark relative overflow-hidden bg-background py-24 text-foreground sm:py-32"
+    >
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-x-0 top-0 h-px"
-        style={{ background: "var(--gradient-gold)", opacity: 0.35 }}
+        style={{ background: "var(--gradient-gold)", opacity: 0.55 }}
       />
-      <div className="section-shell">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -right-24 top-10 h-80 w-80 rounded-full opacity-20 blur-3xl"
+        style={{ background: "var(--gradient-gold)" }}
+      />
+      <div className="section-shell relative">
         <SectionHeading
           eyebrow="Why hire me"
           title="Four reasons hiring managers keep the conversation going."
         />
-        <RevealGroup className="mt-14 grid gap-6 sm:grid-cols-2">
-          {REASONS.map((reason) => (
-            <RevealItem key={reason.no} kind="scale">
+        <RevealGroup className="mt-14 grid gap-6 sm:grid-cols-2" stagger={0.14}>
+          {REASONS.map((reason, i) => (
+            <RevealItem key={reason.no} kind={i % 2 === 0 ? "left" : "right"}>
               <article className="card-lux group h-full p-8">
                 <div className="flex items-start justify-between gap-4">
                   <span className="font-display text-sm font-semibold text-gold-gradient">
@@ -118,6 +126,7 @@ export function WhyMe() {
     </section>
   );
 }
+
 
 export function Experience() {
   return (

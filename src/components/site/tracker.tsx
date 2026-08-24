@@ -5,7 +5,7 @@ import { NAV_LINKS } from "./data";
 const SECTIONS = [{ label: "Intro", href: "#top" }, ...NAV_LINKS];
 
 export function SectionTracker() {
-  const [active, setActive] = useState(SECTIONS[0].href);
+  const [active, setActive] = useState("#top");
   const { scrollYProgress } = useScroll();
   const progress = useSpring(scrollYProgress, { stiffness: 110, damping: 26, restDelta: 0.001 });
 

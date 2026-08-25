@@ -294,6 +294,35 @@ export function Insights() {
 export function Contact() {
   const [sending, setSending] = useState(false);
 
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setSending(true);
+
+    try {
+      const formData = new FormData(e.currentTarget);
+      
+      const response = await fetch("https://formspree.io/f/xkjwdjrz", {
+        method: "POST",
+        body: formData,
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      if (response.ok) {
+        toast.success("Your message has been sent! I'll reply within 2 working days.");
+        (e.target as HTMLFormElement).reset();
+      } else {
+        toast.error("Failed to send message. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      toast.error("Something went wrong. Please try again.");
+    } finally {
+      setSending(false);
+    }
+  };
+
   return (
     <section id="contact" className="relative bg-secondary/50 py-24 sm:py-32">
       <div className="section-shell grid gap-12 lg:grid-cols-[0.9fr_1.1fr]">
@@ -314,15 +343,7 @@ export function Contact() {
         <Reveal kind="scale" delay={0.1}>
           <form
             className="card-lux p-6 sm:p-8"
-            onSubmit={(e) => {
-              e.preventDefault();
-              setSending(true);
-              setTimeout(() => {
-                setSending(false);
-                (e.target as HTMLFormElement).reset();
-                toast.success("Thank you — your message is on its way.");
-              }, 700);
-            }}
+            onSubmit={handleSubmit}
           >
             <div className="grid gap-5 sm:grid-cols-2">
               <div>

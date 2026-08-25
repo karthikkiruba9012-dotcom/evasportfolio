@@ -77,13 +77,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Evangelin Priyadarshini — Marketing & HR Strategist" },
-      {
-        name: "description",
-        content:
-          "MBA '27 Marketing & HR strategist blending analytics, content strategy and people-first empathy to drive brand growth.",
-      },
       { name: "author", content: "Evangelin Priyadarshini" },
+      { property: "og:site_name", content: "Evangelin Priyadarshini" },
+
       { property: "og:type", content: "profile" },
       { name: "twitter:card", content: "summary_large_image" },
     ],

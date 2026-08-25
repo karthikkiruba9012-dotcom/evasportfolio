@@ -29,12 +29,48 @@ export const Route = createFileRoute("/")({
         content:
           "Driving brand growth through digital & content strategy. MBA '27 candidate specialising in Marketing and Human Resources.",
       },
-      { property: "og:type", content: "profile" },
-      { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:url", content: "https://evasportfolio.lovable.app/" },
+    ],
+    links: [{ rel: "canonical", href: "https://evasportfolio.lovable.app/" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Person",
+          name: "Evangelin Priyadarshini",
+          jobTitle: "Marketing & HR Strategist",
+          url: "https://evasportfolio.lovable.app/",
+          address: {
+            "@type": "PostalAddress",
+            addressLocality: "Bengaluru",
+            addressRegion: "Karnataka",
+            addressCountry: "IN",
+          },
+          knowsAbout: [
+            "Digital Marketing",
+            "Content Strategy",
+            "SEO",
+            "Performance Marketing",
+            "Human Resources Management",
+          ],
+          alumniOf: [
+            {
+              "@type": "CollegeOrUniversity",
+              name: "St Joseph's Institute of Management",
+            },
+            {
+              "@type": "CollegeOrUniversity",
+              name: "Karunya Institute of Technology and Sciences",
+            },
+          ],
+        }),
+      },
     ],
   }),
   component: Index,
 });
+
 
 function Index() {
   return (

@@ -35,7 +35,7 @@ export function SiteNav() {
               style={{ background: "color-mix(in oklab, var(--gold) 12%, var(--card))" }}
             >
               <img
-                src="/Screenshot 2026-08-25 115046.png"
+                src="/logoweb.png"
                 alt="Eva's Portfolio logo"
                 className="h-full w-full object-cover"
               />

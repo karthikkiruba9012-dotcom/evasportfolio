@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import logoAsset from "@/assets/eva-logo.png.asset.json";
 import { Toaster } from "@/components/ui/sonner";
 import { SiteNav } from "@/components/site/nav";
 import { Hero } from "@/components/site/hero";
@@ -30,6 +31,8 @@ export const Route = createFileRoute("/")({
           "Driving brand growth through digital & content strategy. MBA '27 candidate specialising in Marketing and Human Resources.",
       },
       { property: "og:url", content: "https://evasportfolio.lovable.app/" },
+      { property: "og:image", content: `https://evasportfolio.lovable.app${logoAsset.url}` },
+      { name: "twitter:image", content: `https://evasportfolio.lovable.app${logoAsset.url}` },
     ],
     links: [{ rel: "canonical", href: "https://evasportfolio.lovable.app/" }],
     scripts: [

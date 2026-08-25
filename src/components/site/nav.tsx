@@ -2,8 +2,6 @@ import { useEffect, useState } from "react";
 import { motion, useScroll, useSpring } from "motion/react";
 import { CalendarCheck, Menu, X } from "lucide-react";
 import { NAV_LINKS } from "./data";
-import logoAsset from "@/assets/eva-logo.png.asset.json";
-
 
 export function SiteNav() {
   const [scrolled, setScrolled] = useState(false);
@@ -37,7 +35,7 @@ export function SiteNav() {
               style={{ background: "color-mix(in oklab, var(--gold) 12%, var(--card))" }}
             >
               <img
-                src={logoAsset.url}
+                src="/Screenshot 2026-08-25 115046.png"
                 alt="Eva's Portfolio logo"
                 className="h-full w-full object-cover"
               />
@@ -46,7 +44,6 @@ export function SiteNav() {
               Evangelin Priyadarshini
             </span>
           </a>
-
 
           <div className="hidden items-center gap-7 lg:flex">
             {NAV_LINKS.map((link) => (

@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { motion, useScroll, useSpring } from "motion/react";
 import { CalendarCheck, Menu, X } from "lucide-react";
 import { NAV_LINKS } from "./data";
+import logoAsset from "@/assets/eva-logo.png.asset.json";
+
 
 export function SiteNav() {
   const [scrolled, setScrolled] = useState(false);

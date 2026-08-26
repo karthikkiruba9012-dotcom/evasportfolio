@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import logoAsset from "@/assets/eva-logo.png.asset.json";
+
 import { Toaster } from "@/components/ui/sonner";
 import { SiteNav } from "@/components/site/nav";
 import { Hero } from "@/components/site/hero";

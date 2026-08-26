@@ -31,8 +31,21 @@ export const Route = createFileRoute("/")({
           "Driving brand growth through digital & content strategy. MBA '27 candidate specialising in Marketing and Human Resources.",
       },
       { property: "og:url", content: "https://evasportfolio.lovable.app/" },
-      { property: "og:image", content: `https://evasportfolio.lovable.app${logoAsset.url}` },
-      { name: "twitter:image", content: `https://evasportfolio.lovable.app${logoAsset.url}` },
+      { property: "og:image", content: "https://evasportfolio.lovable.app/og-cover.jpg" },
+      { property: "og:image:secure_url", content: "https://evasportfolio.lovable.app/og-cover.jpg" },
+      { property: "og:image:type", content: "image/jpeg" },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      {
+        property: "og:image:alt",
+        content: "Evangelin Priyadarshini — MBA, HR & Marketing Strategist",
+      },
+      { name: "twitter:image", content: "https://evasportfolio.lovable.app/og-cover.jpg" },
+      {
+        name: "twitter:image:alt",
+        content: "Evangelin Priyadarshini — MBA, HR & Marketing Strategist",
+      },
+
     ],
     links: [{ rel: "canonical", href: "https://evasportfolio.lovable.app/" }],
     scripts: [

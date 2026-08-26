@@ -53,43 +53,70 @@ function SectionHeading({
 
 export function About() {
   return (
-    <section id="about" className="relative py-24 sm:py-32">
-      <div className="section-shell grid gap-12 lg:grid-cols-[0.85fr_1.15fr]">
-        <SectionHeading eyebrow="About" title="Analytical strategy, delivered with empathy." />
-        <div className="space-y-6 text-base leading-relaxed text-muted-foreground">
-          <Reveal kind="right">
-            <p>
-              I'm an MBA '27 candidate at St Joseph's Institute of Management, specialising in
-              Marketing and Human Resources — and I build brand growth the way a business case demands
-              it: audience insight first, then content, then measurement.
+    <ParallaxScene id="about" className="relative overflow-hidden py-24 sm:py-32">
+      {(progress) => (
+        <>
+          <ParallaxLayer
+            progress={progress}
+            distance={150}
+            className="pointer-events-none absolute inset-0 -z-10"
+          >
+            <div
+              aria-hidden="true"
+              className="absolute -left-24 top-4 h-96 w-96 rounded-full opacity-[0.16] blur-3xl"
+              style={{ background: "var(--gradient-gold)" }}
+            />
+            <div
+              aria-hidden="true"
+              className="absolute right-0 bottom-0 h-80 w-80 rounded-full bg-primary/10 blur-3xl"
+            />
+            <p
+              aria-hidden="true"
+              className="absolute right-4 top-6 select-none font-display text-[7rem] font-semibold leading-none text-foreground/[0.035] sm:text-[11rem]"
+            >
+              About
             </p>
-          </Reveal>
-          <Reveal kind="right" delay={0.12}>
-            <p>
-              Most recently I worked as a Digital Marketing Intern at Address Advisors, owning SEO,
-              social media marketing and content strategy for a real-estate advisory brand. Before
-              that, inside sales at Hasiru Farms put me on the phone with buyers in four languages —
-              the fastest education in what messaging actually moves a decision.
-            </p>
-          </Reveal>
-          <Reveal kind="right" delay={0.24}>
-            <p className="border-l-2 border-accent/60 pl-5 text-foreground">
-              My value proposition is the blend: analytical data, real domain experience and genuine
-              empathy — applied to create measurable business impact across agribusiness, consulting
-              and corporate environments.
-            </p>
-          </Reveal>
-        </div>
-      </div>
-    </section>
+          </ParallaxLayer>
+          <ParallaxLayer progress={progress} distance={34} className="section-shell relative">
+            <div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr]">
+              <SectionHeading eyebrow="About" title="Analytical strategy, delivered with empathy." />
+              <div className="space-y-6 text-base leading-relaxed text-muted-foreground">
+                <Reveal kind="right">
+                  <p>
+                    I'm an MBA '27 candidate at St Joseph's Institute of Management, specialising in
+                    Marketing and Human Resources — and I build brand growth the way a business case
+                    demands it: audience insight first, then content, then measurement.
+                  </p>
+                </Reveal>
+                <Reveal kind="right" delay={0.12}>
+                  <p>
+                    Most recently I worked as a Digital Marketing Intern at Address Advisors, owning
+                    SEO, social media marketing and content strategy for a real-estate advisory brand.
+                    Before that, inside sales at Hasiru Farms put me on the phone with buyers in four
+                    languages — the fastest education in what messaging actually moves a decision.
+                  </p>
+                </Reveal>
+                <Reveal kind="right" delay={0.24}>
+                  <p className="border-l-2 border-accent/60 pl-5 text-foreground">
+                    My value proposition is the blend: analytical data, real domain experience and
+                    genuine empathy — applied to create measurable business impact across
+                    agribusiness, consulting and corporate environments.
+                  </p>
+                </Reveal>
+              </div>
+            </div>
+          </ParallaxLayer>
+        </>
+      )}
+    </ParallaxScene>
   );
 }
 
 export function WhyMe() {
   return (
-    <section
+    <StickyStack
       id="why"
-      className="dark relative overflow-hidden bg-background py-24 text-foreground sm:py-32"
+      className="dark relative bg-background py-24 text-foreground sm:py-32"
     >
       <div
         aria-hidden="true"
@@ -123,9 +150,10 @@ export function WhyMe() {
           ))}
         </RevealGroup>
       </div>
-    </section>
+    </StickyStack>
   );
 }
+
 
 
 export function Experience() {
